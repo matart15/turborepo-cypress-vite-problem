@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
   "compilerOptions": {
     "target": "es6",
@@ -9,8 +8,6 @@
       "esnext"
     ],
     "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "noImplicitAny": false,
@@ -23,7 +20,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
     "composite": false,
     "declaration": false,
@@ -34,14 +30,23 @@
     "typeRoots": [
       "../../node_modules/@types",
       "types"
-    ]
+    ],
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "jsx": "react-jsx",
+    "types": [
+      "vite/client",
+      "node",
+      "jest"
+    ],
+    "baseUrl": "."
   },
   "include": [
-    "."
+    "src",
+    "types"
   ],
   "exclude": [
-    "dist",
-    "build",
-    "node_modules"
-  ]
+    "node_modules",
+    "vite.config.ts"
+  ],
 }
